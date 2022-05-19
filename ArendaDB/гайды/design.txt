@@ -1,0 +1,4 @@
+Background="#522546"
+BorderBrush="#522546"
+Foreground="#E23E57"  
+FontFamily="Century Gothic"

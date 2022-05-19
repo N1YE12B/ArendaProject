@@ -1,0 +1,82 @@
+﻿<Window x:Class="ArendaProject.Windows.RentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ArendaProject.Windows"
+        mc:Ignorable="d"
+        Title="Аренда" Height="600" Width="940"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        >
+    <Grid Background="#311D3F">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock
+            Text="Список аренды"
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            FontSize="36"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Foreground="#E23E57"
+            
+            />
+
+
+        <Button x:Name="btnAdd"
+            Grid.Row="5"
+            Height="40"
+            Width="130"
+            Content="Добавить"
+            Grid.ColumnSpan="4"
+            Background="Transparent"
+            Foreground="#E23E57"
+            BorderBrush="#E23E57"
+             FontFamily="Century Gothic"
+            FontSize="18"
+            Click="btnAdd_Click"
+            />
+
+
+
+        <ListView x:Name="LVRent"
+                  Grid.Row="1"
+                  Grid.RowSpan="4"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="4"
+                  VerticalAlignment="Top"
+                  Background="#311D3F"
+                  Foreground="#E23E57"
+                  >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="№" Width="35" DisplayMemberBinding="{Binding idRent}"/>
+                    <GridViewColumn Header="Фам. сотрудника" Width="120" DisplayMemberBinding="{Binding Employee.LastName}"/>
+                    <GridViewColumn Header="Фам. клиента" Width="120" DisplayMemberBinding="{Binding Client.LastName}"/>
+                    <GridViewColumn Header="Им. клиента" Width="120" DisplayMemberBinding="{Binding Client.FirstName}"/>
+                    <GridViewColumn Header="Отч. клиента" Width="120" DisplayMemberBinding="{Binding Client.Patronymic}"/>
+                    <GridViewColumn Header="Инструмент" Width="120" DisplayMemberBinding="{Binding Instrument.InstrumentName}"/>
+                    <GridViewColumn Header="Начало аренды" Width="155" DisplayMemberBinding="{Binding TimeRentStart}"/>
+                    <GridViewColumn Header="Конец аренды" Width="145" DisplayMemberBinding="{Binding TimeRentEnd}"/>
+                  
+
+                </GridView>
+            </ListView.View>
+        </ListView  >
+    </Grid>
+</Window>

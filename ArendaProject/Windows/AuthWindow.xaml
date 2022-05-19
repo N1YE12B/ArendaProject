@@ -1,0 +1,91 @@
+﻿<Window x:Class="ArendaProject.Windows.AuthWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ArendaProject.Windows"
+        mc:Ignorable="d"
+        Title="Авторизация" Height="400" Width="300"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock x:Name="AuthLabel"
+            Text="Авторизация"
+            FontSize="22"
+            FontWeight="Bold"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+                   FontFamily="Century Gothic"
+            />
+        <TextBox x:Name="txtLogin"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            Grid.Row="1"
+            BorderBrush="Black"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+                 FontFamily="Century Gothic"
+            Height="25"
+            Width="200"
+            Text="Введите Логин"
+            FontStyle="Oblique"
+             
+                 GotFocus="txtLogin_GotFocus" LostFocus="txtLogin_LostFocus"
+            
+            />
+        <PasswordBox x:Name="txtPass"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            Grid.Row="2"          
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Height="25"
+                     FontFamily="Century Gothic"
+            Width="200"
+            BorderBrush="Black" LostFocus="txtPass_LostFocus"
+             
+            />
+        <Button x:Name="btnAuth"
+             Grid.Column="0"
+            Grid.ColumnSpan="3"
+            Grid.Row="2"          
+            HorizontalAlignment="Center"
+            VerticalAlignment="Bottom"
+            Height="25"
+            Width="100"
+            Content="Войти" 
+            Click="btnAuth_Click"
+                FontFamily="Century Gothic"
+            />
+        <Image x:Name="___ArendaProject_component_lock_png" 
+               Width="22"
+               Height="22"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Top"
+               Margin="0 0 30 0"
+              
+               Stretch="Fill"
+               Grid.Row="2"
+               Grid.Column="0"
+               
+               />
+
+
+
+    </Grid>
+</Window>
